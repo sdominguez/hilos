@@ -14,24 +14,26 @@ public class Runner implements Runnable{
     }
 
     private char c;
+    private long latency;
     private String progress;
     public Runner(char c){
         this.c = c;
         progress="";
+        latency = (long) Math.random()*1000+50;
     }
 
     @Override
     public void run() {
         int i = 1;
-
-        while(i <= 20){
+        while(i <= 50){
             progress+=c;
             System.out.println(progress);
             try {
-                Thread.sleep(900L);
+                Thread.sleep(latency);
             } catch (InterruptedException e) {}
             i++;
         }
-
+        progress+=" Finish!!";
+        System.out.println(progress);
     }
 }

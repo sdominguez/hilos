@@ -9,6 +9,6 @@ public class Executor {
         executorService.execute(new Runner('*'));
         executorService.execute(new Runner('-'));
         executorService.execute(new Runner('#'));
-        executorService.shutdownNow();
+        executorService.shutdown();
     }
 }
